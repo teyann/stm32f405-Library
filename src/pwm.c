@@ -9,6 +9,7 @@
 typedef uint8_t bool;
 #define false (bool) 0
 #define true (bool) 1
+#define NULL ((void *)0)
 #endif
 
 static volatile uint32_t rcRising[RC_CHANNEL_MAX] = {0, };
@@ -16,7 +17,7 @@ static volatile uint32_t rcFalling[RC_CHANNEL_MAX] = {0, };
 static volatile uint16_t rcRawData[RC_CHANNEL_MAX] = {1000, 1000, 1000, 1000, 1000};
 static volatile bool rcDataVaild[RC_CHANNEL_MAX] = {true, true, true, true, true};
 
-static const extiDevice_t* extiChannel = 0; //NULL
+static const extiDevice_t* extiChannel = NULL; //NULL
 
 void pwmHandler(extiDevice_t extiDevice);
 

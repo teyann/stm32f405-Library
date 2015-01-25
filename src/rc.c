@@ -4,10 +4,17 @@
 #include <pwm.h>
 #include <rc.h>
 
+#ifndef bool
+typedef uint8_t bool;
+#define false (bool) 0
+#define true (bool) 1
+#define NULL ((void *)0)
+#endif
+
 /*
  * @brief 사용할 외부인터럽트 장치를 저장할 포인터
  */
-static const extiDevice_t* rcExtiDevicePtr = 0; // NULL
+static const extiDevice_t* rcExtiDevicePtr = NULL; // NULL
 
 /*
  * @brief 사용할 수신기의 타입을 저장할 변수
